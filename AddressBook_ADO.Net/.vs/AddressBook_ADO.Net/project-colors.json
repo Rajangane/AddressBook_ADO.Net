@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "de8a4367-f56c-4ddb-b123-dac63949da09": {
+      "ProjectGuid": "de8a4367-f56c-4ddb-b123-dac63949da09",
+      "DisplayName": "AddressBook_ADO.Net",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -9,8 +9,6 @@ namespace AddressBook_ADO.Net
 {
     public class PersonDetails
     {
-       // public static string connectionString = (@"Data (localdb)\MSSQLLocalDB;Initial Catalog=AddressBookSystem;Integrated Security=True;");
-        //SqlConnection connection = new SqlConnection(connectionString);
         public static string connectionString = @"Data source=(localdb)\MSSQLLocalDB; Initial Catalog=AddressBookSystem; Integrated Security=True;";
         SqlConnection connection = new SqlConnection(connectionString);
 
@@ -21,6 +19,7 @@ namespace AddressBook_ADO.Net
                 using (this.connection)
                 {
                     this.connection.Open();
+                 
                     SqlCommand command = new SqlCommand("SpAddPersonDetail", this.connection);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@ID", model.ID);
@@ -36,7 +35,7 @@ namespace AddressBook_ADO.Net
                     command.Parameters.AddWithValue("@Type", model.Type);
 
                     var result = command.ExecuteNonQuery();
-                    // this.connection.Close();
+                    this.connection.Close();
                     if (result != 0)
                     {
 
